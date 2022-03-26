@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="referrer" content="no-referrer" />
+  <meta name="generator" content="diffoscope" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAADdgAAA3YBfdWCzAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAM8SURBVFiF7dZdaJZlGAfw3/O+e9XNjy3XllZzWImBxIpifqTgsmUHBSIeBNFBdRh0UHQ0xGdb66CFBIERZEFRQRRUw0HkQkLMYQSBdpCFWdgSP6jpNn2393k68Nn2bj3vXtb6UOh/cl/39b/u67mem/913zf/4z9GUDw5xNI8n5WIzW9m/QF2YluJmI8203mALzEvLWAerRs4Pz6vSIkZSlsYk0/GkaB0zEgyDgWMlijyWsJuS2fkQwu8pqpMTA0ypeiShG71Bp0rU8Q+A47MWEDgvHZbZl/Av4SpIgxVYB3IqwZDmoUuYkzosDaNchpAoFqkSmgjGPWzLieF1k3JHVsjvCJQHBYaSy9g1E3m+QImQiK9SbNGqJDzuiDZ0lggQJCsyelDq8BB47sbCWTsnvhG3kqcLL833eqF4hk1EOoTOjZjnnaRdq2l6KtMAyl4/g23bKJrun+Mt9uOq7nvqOVbebWYy9Adc1fM/R/3CO780dONbIeFPHsPw+ULeM5ZHTbXHfUtXpxOZzgT5z02UGsZThRzF/ilht9G+fr4zfbfccIxXIa7uVTup69i7LJXaEEqF3on1d9ludBLpVLOVoT1lky9QYtwQ6p3WAVqSyUslWwSbRrkPJrMtgn0iBVk7BPJ4sGE24EPQKW3jLgdzWKLBTbg0yTuZeGkDsp2gcUGDesHGQ/gK5G8nLMigWiCe3jCrnTRiJ9EYjm1ImsUEq5l8hScPXbpsVtlKhfan+pv0yD0ZqmU5XegGBmnDIo/pylj8oYLOP3Eab/v5Zmi6EtZ3vv1FU/2r7LioYSL2dNybbdiMdptFU57++20Vqh+iq/Tap1WpaWY611wmyWyUzxZDbIWTvEV1Ildn5agfBumoUMTtoisFvhebAAHZWxX0ChwTuScvHdVeVykToysMyJ7ittwbmj31J+6IrRDp5XTfBt1WJ+WYnZdMB0F3xlUgD5uDVj2Sa+a4SrzH+FeyHHmw17V112waBOZgP4WczkLZsILar1fpIliMU4XZoK/poE0XHl+N8v6QcGAUbVymnDIZVnzrTXqGzmnhKLxZX/niyiDjIJgwg4Se1GR/Y8idGPysh6fr0i1i/AHMWHgrwUJgNAAAAAASUVORK5CYII=" />
+  <title>/nix/store/fgzhyrh15pr8rhasv11vvs02xhnmlv6j-diffoscope-207/bin/diffoscope --html ./diff.html /tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/ /tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/</title>
+<style>
+body.diffoscope {
+  background: white;
+  color: black;
+}
+.diffoscope .footer {
+  font-size: small;
+}
+.diffoscope .difference {
+  border: outset #888 1px;
+  background: #E8E8E8;
+  background: rgba(0,0,0,.1);
+  padding: 0.5em;
+  margin: 0.5em 0;
+}
+.diffoscope .difference table {
+  table-layout: fixed;
+  width: 100%;
+  border: 0;
+}
+.diffoscope .difference th,
+.diffoscope .difference td {
+  border: 0;
+}
+.diffoscope table.diff {
+  border: 0;
+  border-collapse:collapse;
+  font-size:0.75em;
+  font-family: 'Lucida Console', monospace;
+  word-break: break-word;
+}
+.diffoscope table.diff tr:hover td {
+  background: #FFFF00;
+}
+.diffoscope .line {
+  color:#8080a0
+}
+.diffoscope th {
+  background: black;
+  color: white
+}
+.diffoscope .diffunmodified td {
+  background: #D0D0E0
+}
+.diffoscope .diffhunk td {
+  background: #A0A0A0
+}
+.diffoscope .diffadded td {
+  background: #CCFFCC
+}
+.diffoscope .diffdeleted td {
+  background: #FFCCCC
+}
+.diffoscope .diffchanged td {
+  background: #FFFFA0
+}
+.diffoscope ins, del {
+  background: #E0C880;
+  text-decoration: none
+}
+.diffoscope .dp {
+  color: #B08080
+}
+.diffoscope .comment {
+  font-style: italic;
+}
+.diffoscope .comment.multiline {
+  font-style: normal;
+  font-family: monospace;
+  white-space: pre;
+}
+.diffoscope .source {
+  font-weight: bold;
+}
+.diffoscope .error {
+  border: solid black 1px;
+  background: red;
+  color: white;
+  padding: 0.2em;
+}
+.diffoscope .anchor {
+  margin-left: 0.5em;
+  font-size: 80%;
+  color: #333;
+  text-decoration: none;
+  display: none;
+}
+.diffoscope .diffheader:hover .anchor {
+  display: inline;
+}
+.diffoscope .diffcontrol, .diffoscope .diffcontrol-nochildren {
+  float: left;
+  margin-right: 0.3em;
+  cursor: pointer;
+  display: none; /* currently, only available in html-dir output where jquery is enabled */
+}
+.diffoscope .colines {
+  width: 3em;
+}
+.diffoscope .coldiff {
+  width: 99%;
+}
+.diffoscope .diffsize {
+  float: right;
+}
+.diffoscope table.diff tr.ondemand td, .diffoscope div.ondemand-details {
+  background: #f99;
+  text-align: center;
+  padding: 0.5em 0;
+}
+.diffoscope table.diff tr.ondemand:hover td, .diffoscope div.ondemand-details:hover {
+  background: #faa;
+  cursor: pointer;
+}
+</style>
+</head>
+<body class="diffoscope">
+<div class="difference">
+  <div class="diffheader">
+  <div class="diffcontrol diffcontrol-double">⊟</div>
+  <div><span class="diffsize">5.7 KB</span></div>
+  <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/</span> vs.</div>
+  <div id="top"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/</span>
+    <a class="anchor" href="#top">¶</a>
+  </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol">⊟</div>
+    <div><span class="diffsize">281 B</span></div>
+    <div id="stat---"><span class="source">stat {}</span>
+      <a class="anchor" href="#stat---">¶</a>
+    </div>
+    </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>15<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>17<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>1024<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>directory</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>15<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>17<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>1024<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>directory</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0755/drwxr-xr-x)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0755/drwxr-xr-x)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>26</del>.<del>262376</del>6<del>00</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>44</ins>.<ins>080723</ins>6<ins>99</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">428 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/libsqlite3.a</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.a"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/libsqlite3.a</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.a">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.a---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.a---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>12487316<span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>  Blocks:<span class="dp">·</span>9897<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>12487316<span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>  Blocks:<span class="dp">·</span>9897<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>01</del>.<del>29</del>8<del>358284</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>18</ins>.<ins>82</ins>8<ins>704706</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">389 B</span></div>
+    <div><span class="source">/run/user/1001/diffoscope_y4jukx6m_build/tmp9bkfel_l</span> vs.</div>
+    <div id="Drun-user------diffoscope_y-jukx-m_build-tmp-bkfel_l"><span class="source">/run/user/1001/diffoscope_y4jukx6m_build/tmphp_ogkh7</span>
+      <a class="anchor" href="#Drun-user------diffoscope_y-jukx-m_build-tmp-bkfel_l">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">285 B</span></div>
+      <div id="Drun-user------diffoscope_y-jukx-m_build-tmp-bkfel_l---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Drun-user------diffoscope_y-jukx-m_build-tmp-bkfel_l---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>16<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>1<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>512<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>symbolic<span class="dp">·</span>link</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>16<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>1<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>512<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>symbolic<span class="dp">·</span>link</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0777/lrwxrwxrwx)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0777/lrwxrwxrwx)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>01</del>.<del>32</del>2<del>358302</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>18</ins>.<ins>85</ins>2<ins>704724</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">432 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/libsqlite3.lai</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.lai"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/libsqlite3.lai</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.lai">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.lai---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.lai---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>963<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>       Blocks:<span class="dp">·</span>9<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>1024<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>963<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>       Blocks:<span class="dp">·</span>9<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>1024<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>01</del>.<del>31</del>9<del>358300</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>18</ins>.<ins>84</ins>9<ins>704722</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">389 B</span></div>
+    <div><span class="source">/run/user/1001/diffoscope_y4jukx6m_build/tmpt306ytvy</span> vs.</div>
+    <div id="Drun-user------diffoscope_y-jukx-m_build-tmpt---ytvy"><span class="source">/run/user/1001/diffoscope_y4jukx6m_build/tmpc03abyem</span>
+      <a class="anchor" href="#Drun-user------diffoscope_y-jukx-m_build-tmpt---ytvy">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">285 B</span></div>
+      <div id="Drun-user------diffoscope_y-jukx-m_build-tmpt---ytvy---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Drun-user------diffoscope_y-jukx-m_build-tmpt---ytvy---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>19<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>1<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>512<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>symbolic<span class="dp">·</span>link</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>19<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>1<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>512<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>symbolic<span class="dp">·</span>link</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0777/lrwxrwxrwx)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0777/lrwxrwxrwx)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>01</del>.<del>279358270</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>18</ins>.<ins>810704693</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">389 B</span></div>
+    <div><span class="source">/run/user/1001/diffoscope_y4jukx6m_build/tmpvr4d1yyz</span> vs.</div>
+    <div id="Drun-user------diffoscope_y-jukx-m_build-tmpvr-d-yyz"><span class="source">/run/user/1001/diffoscope_y4jukx6m_build/tmp6d_k0ged</span>
+      <a class="anchor" href="#Drun-user------diffoscope_y-jukx-m_build-tmpvr-d-yyz">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">285 B</span></div>
+      <div id="Drun-user------diffoscope_y-jukx-m_build-tmpvr-d-yyz---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Drun-user------diffoscope_y-jukx-m_build-tmpvr-d-yyz---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>19<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>1<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>512<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>symbolic<span class="dp">·</span>link</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>19<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>1<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>512<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>symbolic<span class="dp">·</span>link</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0777/lrwxrwxrwx)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0777/lrwxrwxrwx)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>01</del>.<del>27</del>6<del>358268</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>18</ins>.<ins>80</ins>6<ins>704690</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">442 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/libsqlite3.so.0.8.6</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.so.-.-.-"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/libsqlite3.so.0.8.6</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.so.-.-.-">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.so.-.-.----stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libsqlite-.so.-.-.----stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>7150472<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>   Blocks:<span class="dp">·</span>7097<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>7150472<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>   Blocks:<span class="dp">·</span>7097<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0755/-rwxr-xr-x)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0755/-rwxr-xr-x)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>01</del>.<del>2</del>70<del>35</del>8<del>2</del>6<del>4</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>18</ins>.<ins>80</ins><ins>1</ins>70<ins>46</ins>86<span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">434 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/libtclsqlite3.a</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.a"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/libtclsqlite3.a</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.a">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.a---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.a---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>296376<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>    Blocks:<span class="dp">·</span>313<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>296376<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>    Blocks:<span class="dp">·</span>313<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>26</del>.<del>22</del>7<del>37</del>6<del>5</del>7<del>4</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>44</ins>.<ins>0</ins><ins>44</ins>7<ins>23</ins>67<ins>2</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">389 B</span></div>
+    <div><span class="source">/run/user/1001/diffoscope_y4jukx6m_build/tmp04jwkoo1</span> vs.</div>
+    <div id="Drun-user------diffoscope_y-jukx-m_build-tmp--jwkoo-"><span class="source">/run/user/1001/diffoscope_y4jukx6m_build/tmpfl45n4la</span>
+      <a class="anchor" href="#Drun-user------diffoscope_y-jukx-m_build-tmp--jwkoo-">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">285 B</span></div>
+      <div id="Drun-user------diffoscope_y-jukx-m_build-tmp--jwkoo----stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Drun-user------diffoscope_y-jukx-m_build-tmp--jwkoo----stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>19<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>1<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>512<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>symbolic<span class="dp">·</span>link</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>19<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>Blocks:<span class="dp">·</span>1<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>512<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>symbolic<span class="dp">·</span>link</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0777/lrwxrwxrwx)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0777/lrwxrwxrwx)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>26</del>.<del>2613765</del>9<del>9</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>44</ins>.<ins>0787236</ins>9<ins>7</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">438 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/libtclsqlite3.lai</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.lai"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/libtclsqlite3.lai</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.lai">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.lai---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.lai---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>1137<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>      Blocks:<span class="dp">·</span>9<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>1536<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>1137<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>      Blocks:<span class="dp">·</span>9<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>1536<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>26</del>.<del>2</del>5<del>837</del>6<del>5</del>9<del>7</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>44</ins>.<ins>0</ins><ins>7</ins>5<ins>723</ins>69<ins>5</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">436 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/libtclsqlite3.so</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.so"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/libtclsqlite3.so</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.so">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.so---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-libtclsqlite-.so---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>277320<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>    Blocks:<span class="dp">·</span>313<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>277320<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>    Blocks:<span class="dp">·</span>313<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0755/-rwxr-xr-x)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0755/-rwxr-xr-x)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>26</del>.<del>221376570</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>44</ins>.<ins>038723668</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">418 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/sqlite3</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-sqlite-"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/sqlite3</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-sqlite-">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-sqlite----stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-sqlite----stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>10045800<span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>  Blocks:<span class="dp">·</span>10041<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>10045800<span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>  Blocks:<span class="dp">·</span>10041<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0755/-rwxr-xr-x)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0755/-rwxr-xr-x)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>25</del>.<del>0</del>5<del>1375</del>7<del>1</del>1<span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>42</ins>.<ins>8</ins>5<ins>8722</ins>7<ins>8</ins>1<span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">422 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/sqlite3.o</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-sqlite-.o"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/sqlite3.o</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-sqlite-.o">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-sqlite-.o---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-sqlite-.o---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>12477904<span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>  Blocks:<span class="dp">·</span>9905<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>12477904<span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>  Blocks:<span class="dp">·</span>9905<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>20</del>:<del>44</del>.1<del>75345719</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>02</ins>.1<ins>44692142</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+  <div class="difference">
+    <div class="diffheader">
+    <div class="diffcontrol diffcontrol-double">⊟</div>
+    <div><span class="diffsize">426 B</span></div>
+    <div><span class="source">/tmp/nix-build-lumosql.drv-7/source/build/3.36.0/lumo/build/tclsqlite.o</span> vs.</div>
+    <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-tclsqlite.o"><span class="source">/tmp/nix-build-lumosql.drv-6/source/build/3.36.0/lumo/build/tclsqlite.o</span>
+      <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-tclsqlite.o">¶</a>
+    </div>
+    </div>
+    <div class="difference">
+      <div class="diffheader">
+      <div class="diffcontrol">⊟</div>
+      <div><span class="diffsize">284 B</span></div>
+      <div id="Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-tclsqlite.o---stat---"><span class="source">stat {}</span>
+        <a class="anchor" href="#Dtmp-nix-build-lumosql.drv---source-build--.--.--lumo-build-tclsqlite.o---stat---">¶</a>
+      </div>
+      </div>
+<table class="diff">
+<colgroup><col class="colines"/><col class="coldiff"/>
+<col class="colines"/><col class="coldiff"/></colgroup>
+<tr style="display:none;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="diffhunk"><td colspan="2">Offset 1, 7 lines modified</td><td colspan="2">Offset 1, 7 lines modified</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>296048<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>    Blocks:<span class="dp">·</span>313<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td><td class="diffline">1 </td><td class="diffpresent"><span class="dp">·</span><span class="dp">·</span>Size:<span class="dp">·</span>296048<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">»</span>    Blocks:<span class="dp">·</span>313<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>IO<span class="dp">·</span>Block:<span class="dp">·</span>131072<span class="dp">·</span>regular<span class="dp">·</span>file</td></tr>
+<tr class="diffunmodified"><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td><td class="diffline">2 </td><td class="diffpresent">Device:<span class="dp">·</span>0,27<span class="dp">»</span>    Access:<span class="dp">·</span>(0644/-rw-r--r--)<span class="dp">·</span><span class="dp">·</span>Uid:<span class="dp">·</span>(30001/<span class="dp">·</span>nixbld1)<span class="dp">·</span><span class="dp">·</span><span class="dp">·</span>Gid:<span class="dp">·</span>(30000/<span class="dp">·</span><span class="dp">·</span>nixbld)</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffchanged"><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<del>21</del>:<del>25</del>.<del>60</del>7<del>376119</del><span class="dp">·</span>+0000</td><td class="diffline">3 </td><td class="diffpresent">Modify:<span class="dp">·</span>2022-03-26<span class="dp">·</span>12:<ins>06</ins>:<ins>43</ins>.<ins>41</ins>7<ins>723201</ins><span class="dp">·</span>+0000</td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+<tr class="diffunmodified"><td colspan="2"> </td><td colspan="2"> </td></tr>
+</table>    </div>
+  </div>
+</div>
+<div class="footer">
+Generated by
+<a href="https://diffoscope.org" rel="noopener noreferrer" target="_blank">
+diffoscope</a> 207
+</div>
+</body>
+</html>
+

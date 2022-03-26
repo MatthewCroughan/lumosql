@@ -1,96 +1,60 @@
 {
   description = "A combination of two embedded data storage C language libraries: SQLite and LMDB";
 
-  inputs.nixpkgs.url = "nixpkgs/nixos-20.03";
-  inputs.lumosql-src = { url = github:LumoSQL/LumoSQL; flake = false; };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
+    not-fork-src = {
+      url = "https://lumosql.org/dist/not-fork-0.5.tar.gz";
+      flake = false;
+    };
+    lumosql-src = {
+      url = "https://lumosql.org/dist/lumosql-2022-03-07.tar.gz";
+      flake = false;
+    };
+  };
 
-  outputs = { self, nixpkgs, lumosql-src }:
+  outputs = { self, nixpkgs, not-fork-src, lumosql-src }:
     let
-      version = builtins.substring 0 8 lumosql-src.lastModifiedDate;
-      supportedSystems = [ "x86_64-linux" ];
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
       forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
       nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; overlays = [ self.overlay ]; });
     in
-
     {
-
       overlay = final: prev: {
-
-        lumosql = with final; stdenv.mkDerivation rec {
-          name = "lumosql-${version}";
-
-          src = lumosql-src;
-
-          patches = [ ./makefile.patch ];
-
-          lmdbVersion = "0.9.16";
-
-          lmdbSrc = fetchurl {
-            url = "https://github.com/LMDB/lmdb/archive/LMDB_${lmdbVersion}.tar.gz";
-            hash = "sha256-Sde0CUnyztm8iyPqaonnVHGhyRJlN6iyaMMYoAuEMis=";
-          };
-
-          buildInputs = [ tcl ];
-
-          postUnpack = ''
-            unpackFile $lmdbSrc
-            mv lmdb-* source/src-lmdb
-          '';
-
-          buildPhase = "make bld-LMDB_$lmdbVersion";
-
-          installPhase = "cd bld-LMDB* && make install prefix=${placeholder "out"} HAVE_TCL=";
-
-          meta = {
-            homepage = "https://github.com/LumoSQL/LumoSQL";
-            description = "A combination of two embedded data storage C language libraries: SQLite and LMDB";
-          };
+        not-fork = final.perl532Packages.buildPerlPackage {
+          pname = "NotFork";
+          version = "0.5";
+          src = not-fork-src;
+          outputs = [ "out" ];
+          buildInputs = with final.pkgs.perl532Packages; [ TextGlob Git ];
         };
-
-        # Build Nix against LumoSQL.
-        nix-lumosql = (prev.nix.override {
-          sqlite = final.lumosql;
-        }).overrideDerivation (_: {
-          # FIXME: test suite currently fails with a "malformed database image" error.
-          doInstallCheck = false;
-        });
-
+        lumosql = final.stdenv.mkDerivation {
+          name = "lumosql";
+          src = lumosql-src;
+          outputHashMode = "recursive";
+          outputHashAlgo = "sha256";
+          outputHash = "sha256-61paS4HoJOPKkMrmLfc0fJbt9RH64wcVfGeit5zCT9k=";
+          # This is a proof of concept, so the installPhase is hardcoded to
+          # take the output of build/3.18.2 and put it into the result
+          installPhase = ''
+            mkdir -p $out/bin
+            cp build/3.38.2/lumo/build/sqlite3 $out/bin
+          '';
+          preBuild = ''
+            # LumoSQL's Makefile calls out to not-fork, which wants to use
+            # fossil, and other tools to fetch files.
+            export USER=1000
+            export HOME=$TMP
+            export TARGETS=3.38.2
+          '';
+          buildInputs = with final; [ tcl tclx which cacert ];
+          nativeBuildInputs = with final; [ not-fork fossil git wget curl file ];
+        };
       };
-
       packages = forAllSystems (system:
         {
-          inherit (nixpkgsFor.${system}) lumosql nix-lumosql;
+          inherit (nixpkgsFor.${system}) lumosql not-fork;
         });
-
       defaultPackage = forAllSystems (system: self.packages.${system}.lumosql);
-
-      checks = forAllSystems (system: {
-        inherit (self.packages.${system}) lumosql nix-lumosql;
-
-        # Run the benchmark. We do this in a separate derivation
-        # because it's inherently not binary-reproducible and we don't
-        # want to taint the the lumosql package with that.
-        benchmark =
-          with nixpkgsFor.${system};
-          stdenv.mkDerivation {
-            name = "lumosql-benchmark-${version}";
-
-            inherit (lumosql) src patches lmdbVersion;
-
-            buildInputs = [ tcl ];
-
-            buildPhase = ''
-              ln -s ${lumosql}/bin/sqlite3 sqlite3
-              make LMDB_$lmdbVersion.html
-            '';
-
-            installPhase = ''
-              mkdir -p $out/nix-support
-              cp LMDB_$lmdbVersion.html $out/
-              echo "doc benchmark $out/LMDB_$lmdbVersion.html" >> $out/nix-support/hydra-build-products
-            '';
-          };
-      });
-
     };
 }

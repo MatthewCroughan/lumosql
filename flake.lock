@@ -2,46 +2,52 @@
   "nodes": {
     "lumosql-src": {
       "flake": false,
-      "info": {
-        "lastModified": 1583456315,
-        "narHash": "sha256-eGIYS3LWVP2ujmh4+2ZeKvCtVbddCYUxTUYQa09ngZ4="
-      },
       "locked": {
-        "owner": "LumoSQL",
-        "repo": "LumoSQL",
-        "rev": "0184da5cd903bef106b8b8bdcafae7b39c80206a",
-        "type": "github"
+        "narHash": "sha256-uXfmaRUlS1+K+TO5lnjDSYGUDl2/s6x8YzjhpC9PjRI=",
+        "type": "tarball",
+        "url": "https://lumosql.org/dist/lumosql-2022-03-07.tar.gz"
       },
       "original": {
-        "owner": "LumoSQL",
-        "repo": "LumoSQL",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://lumosql.org/dist/lumosql-2022-03-07.tar.gz"
       }
     },
     "nixpkgs": {
-      "info": {
-        "lastModified": 1589967776,
-        "narHash": "sha256-LN8eYrzWsgCPlXS5C5l0sZz2Fai73uC90JC+FGQ0h4A="
-      },
       "locked": {
-        "owner": "NixOS",
+        "lastModified": 1647992509,
+        "narHash": "sha256-AG40Nt5OWz0LBs5p457emOuwLKOvTtcv/2fUdnEN3Ws=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f45ccd9d20b4e90e43c4562b9941ea1dbd8f07a4",
+        "rev": "d2caa9377539e3b5ff1272ac3aa2d15f3081069f",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-20.03",
-        "type": "indirect"
+        "owner": "nixos",
+        "ref": "nixos-21.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "not-fork-src": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-sns/w6/pLKB5vAI+7T0EnVQbtz/05BaLE0w1q7LlO0A=",
+        "type": "tarball",
+        "url": "https://lumosql.org/dist/not-fork-0.5.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://lumosql.org/dist/not-fork-0.5.tar.gz"
       }
     },
     "root": {
       "inputs": {
         "lumosql-src": "lumosql-src",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "not-fork-src": "not-fork-src"
       }
     }
   },
   "root": "root",
-  "version": 5
+  "version": 7
 }
