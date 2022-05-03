@@ -3,27 +3,27 @@
     "lumosql-src": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-uXfmaRUlS1+K+TO5lnjDSYGUDl2/s6x8YzjhpC9PjRI=",
+        "narHash": "sha256-PM3FluOX28gapBpJKziP6a1dtIBnVu1CrI3CKtYclJQ=",
         "type": "tarball",
-        "url": "https://lumosql.org/dist/lumosql-2022-03-07.tar.gz"
+        "url": "https://lumosql.org/src/lumosql/tarball/185cc271c1/Lumosql-185cc271c1.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://lumosql.org/dist/lumosql-2022-03-07.tar.gz"
+        "url": "https://lumosql.org/src/lumosql/tarball/185cc271c1/Lumosql-185cc271c1.tar.gz"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1647992509,
-        "narHash": "sha256-AG40Nt5OWz0LBs5p457emOuwLKOvTtcv/2fUdnEN3Ws=",
+        "lastModified": 1651007983,
+        "narHash": "sha256-GNay7yDPtLcRcKCNHldug85AhAvBpTtPEJWSSDYBw8U=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d2caa9377539e3b5ff1272ac3aa2d15f3081069f",
+        "rev": "e10da1c7f542515b609f8dfbcf788f3d85b14936",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-21.11",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -31,13 +31,13 @@
     "not-fork-src": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-sns/w6/pLKB5vAI+7T0EnVQbtz/05BaLE0w1q7LlO0A=",
+        "narHash": "sha256-V1PcGPWS8IOt3GPsOEYapCai3wQWO2jC1qvV3yQNwpg=",
         "type": "tarball",
-        "url": "https://lumosql.org/dist/not-fork-0.5.tar.gz"
+        "url": "https://lumosql.org/src/not-forking/tarball/2df922b19f/Not-forking-2df922b19f.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://lumosql.org/dist/not-fork-0.5.tar.gz"
+        "url": "https://lumosql.org/src/not-forking/tarball/2df922b19f/Not-forking-2df922b19f.tar.gz"
       }
     },
     "root": {
