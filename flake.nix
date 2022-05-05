@@ -8,7 +8,7 @@
       flake = false;
     };
     lumosql-src = {
-      url = "https://lumosql.org/src/lumosql/tarball/185cc271c1/Lumosql-185cc271c1.tar.gz";
+      url = "https://lumosql.org/src/lumosql/tarball/0559d60a5c/Lumosql-0559d60a5c.tar.gz";
       flake = false;
     };
   };
@@ -108,15 +108,26 @@
             mkdir -p $out/bin
             mv build/3.38.2/lumo/build/sqlite3 $out/bin
           '';
+          NOTFORK_COMMAND = "${final.symlinkJoin {
+            name = "notfork-with-flags";
+            paths = [ final.not-fork ];
+            buildInputs = [ final.makeWrapper ];
+            postBuild = ''
+             wrapProgram $out/bin/not-fork \
+               --add-flags "--input ${final.lumosql.src}/not-fork.d --offline --cache=${final.notforkMirror} --local-mirror=${final.notforkMirror}";
+            '';
+          }}/bin/not-fork";
           preBuild = ''
+            ls -lah
             # LumoSQL's Makefile calls out to not-fork, which wants to use
             # fossil, and other tools to fetch files.
             export USER=1000
             export HOME=$TMP
             export TARGETS=3.38.2
           '';
-          buildInputs = with final; [ tcl tclx which cacert ];
-          nativeBuildInputs = with final; [ not-fork fossil git wget curl file ];
+          nativeBuildInputs = with final; [ not-fork which tcl tclx ];
+#          buildInputs = with final; [ tcl tclx which cacert ];
+#          nativeBuildInputs = with final; [ not-fork fossil git wget curl file ];
         };
       };
       packages = forAllSystems (system:

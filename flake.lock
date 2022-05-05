@@ -3,13 +3,13 @@
     "lumosql-src": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-PM3FluOX28gapBpJKziP6a1dtIBnVu1CrI3CKtYclJQ=",
+        "narHash": "sha256-gMoG5HVv+R+iFG0fMw3hCVLaRtpRhleLZuLynB0IfTU=",
         "type": "tarball",
-        "url": "https://lumosql.org/src/lumosql/tarball/185cc271c1/Lumosql-185cc271c1.tar.gz"
+        "url": "https://lumosql.org/src/lumosql/tarball/0559d60a5c/Lumosql-0559d60a5c.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://lumosql.org/src/lumosql/tarball/185cc271c1/Lumosql-185cc271c1.tar.gz"
+        "url": "https://lumosql.org/src/lumosql/tarball/0559d60a5c/Lumosql-0559d60a5c.tar.gz"
       }
     },
     "nixpkgs": {
