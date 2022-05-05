@@ -21,25 +21,40 @@
     in
     {
       overlay = final: prev: {
+        notforkMirror = final.linkFarm "foo"
+          (final.lib.mapAttrsToList (n: v: { name = v.expectedMirrorPath; path = v.path; }) final.fetchedFiles);
         parsedLock = builtins.fromJSON (builtins.readFile final.myNotForkDb);
-        fetchedFiles =
+        fetchedFiles = builtins.removeAttrs final.rawFetchedFiles [ "version" ];
+        rawFetchedFiles =
           builtins.mapAttrs
             (n: v:
               if n == "version"
-              then final.parsedLock.version
+              then builtins.trace "using not-fork lockfile at version ${builtins.toString final.parsedLock.version}" final.parsedLock.version
               else if v.locked.type == "tarball"
-              then builtins.fetchurl {
-                url = v.locked.url;
-                sha256 = v.locked.sha256;
-              }
+              then
+                {
+                  path = builtins.fetchurl {
+                    url = v.locked.url;
+                    sha256 = v.locked.sha256;
+                  };
+                  expectedMirrorPath = n + ".tar.gz";
+                }
               else if v.locked.type == "git"
-              then builtins.fetchGit {
-                url = v.locked.url + ".git";
-                rev = v.locked.rev;
-                allRefs = true;
-              }
+              then
+                {
+                  path = builtins.fetchGit {
+                    url = v.locked.url + ".git";
+                    rev = v.locked.rev;
+                    allRefs = true;
+                  };
+                  expectedMirrorPath = n + "-" + final.parsedLock.${n}.locked.rev;
+                }
               else if v.locked.type == "fossil"
-              then builtins.fetchTree "fsl+${v.locked.url}?rev=${v.locked.rev}"
+              then
+                {
+                  path = builtins.fetchTree "fsl+${v.locked.url}?rev=${v.locked.rev}";
+                  expectedMirrorPath = n + "-" + final.parsedLock.${n}.locked.rev;
+                }
               else throw "could not read lockfile"
             )
             final.parsedLock;
@@ -106,7 +121,7 @@
       };
       packages = forAllSystems (system:
         {
-          inherit (nixpkgsFor.${system}) lumosql not-fork myNotForkDb parsedLock fetchedFiles;
+          inherit (nixpkgsFor.${system}) lumosql not-fork myNotForkDb parsedLock fetchedFiles notforkMirror;
         });
       defaultPackage = forAllSystems (system: self.packages.${system}.lumosql);
     };
