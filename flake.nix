@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     not-fork-src = {
-      url = "https://lumosql.org/src/not-forking/tarball/2df922b19f/Not-forking-2df922b19f.tar.gz";
+      url = "https://lumosql.org/src/not-forking/tarball/4ad471fea7/Not-forking-4ad471fea7.tar.gz";
       flake = false;
     };
     lumosql-src = {
@@ -25,7 +25,9 @@
         fetchedFiles =
           builtins.mapAttrs
             (n: v:
-              if v.locked.type == "tarball"
+              if n == "version"
+              then final.parsedLock.version
+              else if v.locked.type == "tarball"
               then builtins.fetchurl {
                 url = v.locked.url;
                 sha256 = v.locked.sha256;
@@ -34,7 +36,10 @@
               then builtins.fetchGit {
                 url = v.locked.url + ".git";
                 rev = v.locked.rev;
+                allRefs = true;
               }
+              else if v.locked.type == "fossil"
+              then builtins.fetchTree "fsl+${v.locked.url}?rev=${v.locked.rev}"
               else throw "could not read lockfile"
             )
             final.parsedLock;
@@ -43,7 +48,7 @@
           '';
           outputHashMode = "recursive";
           outputHashAlgo = "sha256";
-          outputHash = "sha256-4UiIvosXZs6R9d5QzVBs7wsNkC84rQ1GAp9rvHjE1vw=";
+          outputHash = "sha256-bMKO10u9a+eSY9kaYTBGrwFxJ12zYQKmT0a9JXNN0/M=";
           buildInputs = with final; [ not-fork cacert ];
         }
         ''
@@ -58,7 +63,7 @@
 #          find . -print0 | xargs -0 touch -ht 197001010000.01
 #          not-fork --input ${final.lumosql.src}/not-fork.d --online --update --query --cache $out/not-fork-cache
 #          not-fork --input ${final.lumosql.src}/not-fork.d --offline --build-json-lock=$out
-          not-fork --input ${final.lumosql.src}/not-fork.d --online --prefer-tarball-for=fossil --build-json-lock=$out
+          not-fork --input ${final.lumosql.src}/not-fork.d --online --build-json-lock=$out
         '';
         not-fork = final.perl534Packages.buildPerlPackage {
           pname = "NotFork";
@@ -81,7 +86,7 @@
           src = lumosql-src;
           outputHashMode = "recursive";
           outputHashAlgo = "sha256";
-          outputHash = "sha256-61paS4HoJOPKkMrmLfc0fJbt9RH64wcVfGeit5zCT9k=";
+          outputHash = "";
           # This is a proof of concept, so the installPhase is hardcoded to
           # take the output of build/3.18.2 and put it into the result
           installPhase = ''

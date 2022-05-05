@@ -31,13 +31,13 @@
     "not-fork-src": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-V1PcGPWS8IOt3GPsOEYapCai3wQWO2jC1qvV3yQNwpg=",
+        "narHash": "sha256-bB2J+ZXZGsPG1PPyAEYmCLpVTu2H/wUpNSUBqTdefFY=",
         "type": "tarball",
-        "url": "https://lumosql.org/src/not-forking/tarball/2df922b19f/Not-forking-2df922b19f.tar.gz"
+        "url": "https://lumosql.org/src/not-forking/tarball/4ad471fea7/Not-forking-4ad471fea7.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://lumosql.org/src/not-forking/tarball/2df922b19f/Not-forking-2df922b19f.tar.gz"
+        "url": "https://lumosql.org/src/not-forking/tarball/4ad471fea7/Not-forking-4ad471fea7.tar.gz"
       }
     },
     "root": {
